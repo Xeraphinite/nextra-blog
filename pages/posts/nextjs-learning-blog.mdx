@@ -6,7 +6,7 @@ date: 2023-12-27
 tag: Next.js, React.js, zh-CN
 ---
 
-import { Callout } from 'nextra/components'
+import { Callout } from 'nextra/components';
 
 ### Routing
 
@@ -24,7 +24,42 @@ Routing 的中文经常被翻译为路由。路由这个词在计算机网络中
 从上面的例子中，我们可以总结出 Routing 在网页中的作用:
 1. 寻找合适的页面；
 2. 对用户进行权限的限制；
-3. 保证网页的安全性；
+3. 保证网页的安全性；[^1]
+
+
+```mermaid
+graph TD;
+subgraph AA [Consumers]
+A[Mobile app];
+B[Web app];
+C[Node.js client];
+end
+subgraph BB [Services]
+E[REST API];
+F[GraphQL API];
+G[SOAP API];
+end
+Z[GraphQL API];
+A --> Z;
+B --> Z;
+C --> Z;
+Z --> E;
+Z --> F;
+Z --> G;
+```
+
+The **Pythagorean equation**: $a=\sqrt{b^2 + c^2}$.
+
+```js copy showLineNumbers
+const a = 1;
+```
+
+| left   | center | right |
+| :----- | :----: | ----: |
+| foo    |  bar   |   baz |
+| banana | apple  |  kiwi |
+
+[^1]: [Next.js 的 Routing 文档](https://nextjs.org/docs/app/building-your-application/routing)
 
 ### Next.js 的文件组织形式
 
@@ -39,4 +74,3 @@ Routing 的中文经常被翻译为路由。路由这个词在计算机网络中
 
 ### Reference
 
-[1](https://nextjs.org/docs/app/building-your-application/routing)

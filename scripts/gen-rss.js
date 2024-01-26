@@ -3,7 +3,8 @@ const path = require('path')
 const RSS = require('rss')
 const matter = require('gray-matter')
 
-async function generate() {
+// Generate RSS Feed
+async function generateRSSFeed() {
   const feed = new RSS({
     title: 'Xeraphinite\'s Study Blog',
     site_url: 'https://yoursite.com',
@@ -39,4 +40,4 @@ async function generate() {
   await fs.writeFile('./public/feed.xml', feed.xml({ indent: true }))
 }
 
-generate()
+generateRSSFeed()

@@ -17,5 +17,15 @@ export default {
         }
       `}</style>
     </small>
-  )
+  ),
+  readMore: '→',
+  postFooter: (
+    <div>
+      <a href="/posts">Back to Blog</a>
+    </div>
+  ),
+  darkMode: false,
+  navs: [
+      
+  ]
 }
