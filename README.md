@@ -11,6 +11,9 @@ base on [nextjs-potofolio-starter](https://github.com/vercel/nextjs-portfolio-st
   - [ ] Color
   - [ ] Layout
   - [ ] Icon
-    - [ ] Icon Sets: [heroicons](https://heroicons.com/)
+    - [x] Icon Sets: [heroicons](https://heroicons.com/)
   - [ ] Website Logo
   - [ ] Animation
+- [ ] Features
+  - [ ] Full-Text Search
+  - [ ] Comment: Waline

@@ -5,7 +5,7 @@ import '../styles/main.css'
 
 export default function Nextra({ Component, pageProps }) {
   return (
-    <NextUIProvider disableBaseline="true">
+    <NextUIProvider>
         <Component {...pageProps} />
     </NextUIProvider>
   )
