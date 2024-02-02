@@ -3,9 +3,6 @@ import Footer from './components/Footer.jsx';
 import PostFooter from './components/PostFooter.jsx';
 
 export default {
-  header: (
-    '.'
-  ),
   postFooter: (
     <>
       <PostFooter />
@@ -17,6 +14,8 @@ export default {
   ),
   darkMode: true,
   readMore: (
-    'Read more ->'
+    <a className="text-primary-500 hover:underline hover:text-primary-700 hover:shadow-md transition-colors duration-300" href="#">
+      Read more
+    </a>
   ),
 }

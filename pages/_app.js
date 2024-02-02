@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { init } from '@waline/client';
 
-import 'nextra-theme-blog/style.css';
 import '../styles/main.css';
 
 export default function Nextra({ Component, pageProps }) {
@@ -9,24 +8,29 @@ export default function Nextra({ Component, pageProps }) {
   useEffect(() => {
     const hetiScript = document.createElement('script');
     hetiScript.src = '//unpkg.com/heti/umd/heti-addon.min.js';
-    document.head.appendChild(hetiScript);
-    
+  
     const walineScript = document.createElement('script');
     walineScript.src = '//unpkg.com/@waline/client@v3/dist/waline.js';
-    document.head.appendChild(walineScript);
-
-    hetiScript.onload = () => {    
+  
+    const loadScript = (script) => {
+      return new Promise((resolve, reject) => {
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    };
+  
+    Promise.all([loadScript(hetiScript), loadScript(walineScript)]).then(() => {
       const articles = document.querySelectorAll('article');
       articles.forEach(article => article.classList.add('heti'));
       const heti = new Heti('.heti');
       heti.autoSpacing();
-
+  
       init({
-          el: '#waline',
-          serverURL: 'https://blog-comment-one-snowy.vercel.app',
+        el: '#waline',
+        serverURL: 'https://blog-comment-one-snowy.vercel.app',
       });
-    };
-
+    });
   }, []);
 
   return (

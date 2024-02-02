@@ -11,19 +11,21 @@ const Footer = () => {
         username: "Xeraphinite"
     };
 
+    const iconStyle = "w-4 h-4 fill-current text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition duration-300";
+
     return (
         <footer className="py-4">
             <div className="container mx-auto flex justify-between items-center">
-                <p className="text-gray-600 dark:text-gray-400">{socialLinks.username} © { YEAR } Under CC BY-NC-ND 4.0</p>
+                <span className="text-gray-600 dark:text-gray-400">{socialLinks.username} © { YEAR } </span>
                 <div className="flex space-x-3">
                     <a href={socialLinks.github} target="_blank" rel="noopener noreferrer">
-                        <FaGithub className="w-6 h-6 fill-current text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition duration-300" />
+                        <FaGithub className={iconStyle} />
                     </a>
                     <a href={socialLinks.googleScholar} target="_blank" rel="noopener noreferrer">
-                        <FaGoogle className="w-6 h-6 fill-current text-gray-600 dark:text-gray-400 dark:hover:text-gray-200 transition duration-300 hover:text-blue-500" />
+                        <FaGoogle className={iconStyle} />
                     </a>
                     <a href={`mailto:${socialLinks.email}`}>
-                        <FaEnvelope className="w-6 h-6 fill-current text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition duration-300" />
+                        <FaEnvelope className={iconStyle} />
                     </a>
                 </div>
             </div>
